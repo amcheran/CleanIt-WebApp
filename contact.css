@@ -1,0 +1,268 @@
+/* profile button */
+  /* Profile Icon Container */
+  .profile-icon {
+    width: 30px; /* Adjust width as needed */
+    height: 30px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Makes the container circular */
+    background-color: gray; /* Light grey background */
+    overflow: hidden; /* Ensures the icon stays within the circle */
+}
+
+/* Font Awesome Icon Styling */
+.profile-icon i {
+    font-size: 2em; /* Adjust size as needed */
+    color: white; /* Grey color */
+}
+/*              */
+
+/* Contact Us Section Styling */
+.contact-us {
+    background-color: #f4f4f4;
+    padding: 60px 0;
+    text-align: center;
+    color: #333;
+}
+
+.contact-us .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.contact-info, .contact-form, .contact-map {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    text-align: left;
+}
+
+.contact-info h3, .contact-form h3, .contact-map h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #ff6b6b;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #ff6b6b;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+.submit-btn {
+    background-color: #ff6b6b;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #ff4b4b;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 250px;
+    border: 0;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .contact-details {
+        flex-direction: column;
+    }
+}
+
+/* this is the why choose us section style design for my website*/
+/* Why Choose Us Section Styling */
+.why-choose-us {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+    text-align: center;
+    color: #333;
+}
+
+.why-choose-us .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #ff6b6b;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.benefit {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 220px;
+    max-width: 280px;
+    text-align: left;
+}
+
+.benefit-icon {
+    font-size: 36px;
+    color: #ff6b6b;
+    margin-bottom: 15px;
+}
+
+.benefit-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.benefit-description {
+    font-size: 16px;
+    color: #555;
+}
+
+.testimonials {
+    margin-bottom: 40px;
+}
+
+.testimonial-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ff6b6b;
+}
+
+.testimonial {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.achievements {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.achievement {
+    text-align: center;
+}
+
+.achievement h3 {
+    font-size: 32px;
+    color: #ff6b6b;
+    margin-bottom: 10px;
+}
+
+.achievement p {
+    font-size: 16px;
+    color: #555;
+}
+
+.cta {
+    margin-top: 20px;
+}
+
+.cta-btn {
+    background-color: #ff6b6b;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.cta-btn:hover {
+    background-color: #ff4b4b;
+}
+
+@media (max-width: 768px) {
+    .benefits, .achievements {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

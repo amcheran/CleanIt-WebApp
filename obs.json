@@ -1,0 +1,13 @@
+{
+    "ves": [{"yes": 6},8,"true"],
+    "main": [
+        
+            {"type": "chrome"},
+            {"request": "launch"}
+           
+        
+    ]
+
+}
+
+

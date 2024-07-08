@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaning Service</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a, .dropbtn {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            padding: 0px 15px;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+        .nav a:hover, .dropbtn:hover {
+            background-color: #ffcccc;
+            color: #000;
+            border-radius: 5px;
+        }
+        .auth button {
+            text-decoration: none;
+            color: #fff;
+            background-color: #ff6666;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+        .auth button:hover {
+            background-color: #ffcccc;
+            color: #000;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: #ffcccc;
+            color: #000;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .services {
+            padding: 50px;
+            text-align: center;
+        }
+        .service-content {
+            display: none;
+        }
+        .service-content.active {
+            display: block;
+        }
+        .hero {
+            position: relative;
+            background-image: url('pexels-andrea-piacquadio-840996.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            filter: blur(5px);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .cta-button {
+            background-color: #ffcccc;
+            color: #000;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        .horizontal-card {
+            display: none;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Your Logo</div>
+        <div class="nav">
+            <a href="home.html">Home</a>
+            <a href="#">About Us</a>
+            <div class="dropdown">
+                <a class="dropbtn" href="#serviceCards">Our Services</a>
+                <div class="dropdown-content">
+                    <a href="#horizontalCard" onclick="showHorizontalCard()">Residential Cleaning</a>
+                    <a href="#" onclick="showHorizontalCard()">Commercial Cleaning</a>
+                    <a href="#" onclick="showHorizontalCard()">Specialized Cleaning</a>
+                </div>
+            </div>
+            <a href="#">FAQs</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Book Now</a>
+        </div>
+        <div class="auth">
+            <button>Logout</button>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Your Trusted Partner for a Spotless Home</h1>
+            <p>Professional cleaning services at your doorstep. Book now and enjoy a cleaner, healthier home.</p>
+            <a href="#" class="cta-button">Book Now</a>
+            <a href="#" class="cta-button">Learn More</a>
+        </div>
+    </div>
+
+    
+    <div class="container">
+        <h2 class="text-center mt-5">Our Services</h2>
+        <div class="row mt-4" id="serviceCards">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="pexels-andrea-piacquadio-840996.jpg" class="card-img-top" alt="Residential Cleaning">
+                    <div class="card-body">
+                        <h5 class="card-title">Residential Cleaning</h5>
+                        <p class="card-text">Professional cleaning for your home</p>
+                        <p class="card-text">Price: $50</p>
+                        <!-- Add onclick event to show the horizontal card -->
+                        <a href="#" class="btn btn-primary" onclick="showHorizontalCard()">See More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="pexels-andrea-piacquadio-840996.jpg" class="card-img-top" alt="Commercial Cleaning">
+                    <div class="card-body">
+                        <h5 class="card-title">Commercial Cleaning</h5>
+                        <p class="card-text">Specialized cleaning for commercial spaces</p>
+                        <p class="card-text">Price: $100</p>
+                        <!-- Add onclick event to show the horizontal card -->
+                        <a href="#" class="btn btn-primary" onclick="showHorizontalCard()">See More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="pexels-andrea-piacquadio-840996.jpg" class="card-img-top" alt="Specialized Cleaning">
+                    <div class="card-body">
+                        <h5 class="card-title">Specialized Cleaning</h5>
+                        <p class="card-text">Customized cleaning services tailored to your needs</p>
+                        <p class="card-text">Price: $80</p>
+                        <!-- Add onclick event to show the horizontal card -->
+                        <a href="#" class="btn btn-primary" onclick="showHorizontalCard()">See More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Horizontal Card -->
+        <div class="horizontal-card" id="horizontalCard">
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Your Phone:</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Describe Your Cleaning Problem:</label>
+                        <textarea class="form-control" id="description" rows="3" placeholder="Describe your cleaning problem here" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Book Now</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <img src="cleaning-service.jpg" alt="Cleaning Service" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+    </footer>
+
+    <script src="Script.js">
+        // function showService(service) {
+        //     // Hide all service content
+        //     const contents = document.querySelectorAll('.service-content');
+        //     contents.forEach(content => content.classList.remove('active'));
+            
+        //     // Show the selected service content
+        //     const activeContent = document.getElementById(service);
+        //     activeContent.classList.add('active');
+        // }
+
+        
+    </script>
+</body>
+</html>

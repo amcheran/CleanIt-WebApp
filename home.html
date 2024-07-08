@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="contact.css">
+    <title>Cleaning Service</title>
+
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            position: fixed;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            width: 100%;
+            z-index: 10; /* Ensures it's on top of other content */
+        }
+
+        /* //nav bar code// */
+
+        .nav {
+            display: flex;
+            gap: 10px;
+            
+        }
+        .nav a {
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px 15px;
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav a:hover {
+            background-color: #ffcccc;
+            color: #000;
+            border-radius: 5px;
+        }
+
+        /*logo design */
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.logo .text {
+    color: #2980b9; /* Blue for Clean */
+}
+
+.logo .highlight {
+    color: #e74c3c; /* Red for It */
+    position: relative;
+    padding-left: 0.00em;
+}
+
+/* Sparkle Shape */
+.logo .sparkle {
+    width: 10px;
+    height: 10px;
+    background-color: #f1c40f; /* Yellow for sparkle */
+    position: absolute;
+    top: -5px;
+    right: -20px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #f1c40f;
+    animation: sparkle 2s infinite alternate;
+}
+
+/* Animation */
+@keyframes sparkle {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.5);
+        opacity: 0.6;
+    }
+}
+        /*end oflogodesign  */
+
+        .auth  {
+            padding-right: 30px;
+            cursor: pointer;
+        }
+        .auth button:hover {
+            background-color: #ffcccc;
+            color: #000;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            padding: 10px 15px;
+        }
+
+        /* Dropdown Button */
+        .dropbtn {
+            background-color: transparent;
+            color: #333;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        /* Dropdown Content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #ffcccc;
+            color: #000;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Change the color of the dropdown button when the dropdown content is shown */
+        .dropdown:hover .dropbtn {
+            background-color: #ffcccc;
+            color: #000;
+        }
+
+        /* end of nav bar code */
+        .hero {
+            position: relative;
+            background-image: url('pexels-andrea-piacquadio-840996.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 95vh;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+           
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            filter: blur(5px);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .ctat-button {
+            background-color: #ffcccc;
+            color: #000;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        .services,   .why-choose-us, .special-offers, .contact {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .heading-with-lines {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0px;
+    font-size: 20px;
+    }
+
+    .heading-with-lines::before,
+    .heading-with-lines::after {
+        content: "";
+        flex: 1;
+        border-bottom: 2px solid #333; /* Change this to your preferred color */
+        margin: 0px 20px; /* Adjust the spacing */
+    }
+
+    .container{
+
+        width: 100%;
+        
+       
+    }
+
+    /* code for animated cards */
+    .cardss {
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+   
+    transition: transform 0.6s;
+
+    
+    
+   
+}
+
+
+.cardss button{
+    background-color: rgb(161, 12, 161);
+    width: 100px;
+}
+.cardss img{
+    width: 50px;
+    border-radius: 20px;
+}
+.cardss #imgid{
+    width: 100px;
+}
+.card img {
+    border-radius: 20px;
+    padding: 10px;
+}
+.how-it-works{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    color: rgb(73, 159, 185);
+    align-items: center;
+    
+}
+
+
+/* Split section styling */
+.split-section {
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+   
+    margin-bottom: 30px;
+}
+
+/* Text container styling */
+.text-container {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-container h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+.text-container p {
+    flex-grow: 1;
+    margin-bottom: 20px;
+    font-size: 1em;
+    color: #666;
+}
+
+.cta-button {
+    align-self: flex-start;
+    padding: 10px 90px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Image container styling */
+.image-container {
+    flex: 1;
+    position: relative;
+    height: 70vh;
+    background-color: #fff;
+    background-image: url("Construction\ Worker\ Looking\ Friendly\ Stock\ Image\ -\ Image\ of\ background\,\ plumber_\ 8425237.jpeg");
+}
+
+.image-container img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .split-section {
+        flex-direction: column;
+    }
+
+    .text-container,
+    .image-container {
+        width: 100%;
+        padding: 20px;
+    }
+}
+  
+    
+
+    
+    /* code for animated cards */
+
+
+/* Style the content section */
+.content-section {
+    display: flex;
+    height: 80vh; /* Full viewport height */
+}
+
+/* Style the text content */
+.text-content {
+    width: 40%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #003366; /* Dark blue background */
+    color: #ffffff; /* White text color for contrast */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Style the image content */
+.image-content {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0e0e0; /* Slightly darker gray for contrast */
+}
+
+/* Style the image */
+.image-content img {
+    width: 100%;
+    height: 80vh;
+    display: block;
+}
+
+
+
+    /* codefor why chlose us section*/
+
+   /* code for the footer */
+   /* Footer Styling */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+.footer-description {
+    margin: 15px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #555;
+    padding-bottom: 5px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.contact-info p, .newsletter p {
+    font-size: 14px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    width: 70%;
+}
+
+.newsletter-form button {
+    padding: 10px 20px;
+    background-color: #ff6b6b;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.newsletter-form button:hover {
+    background-color: #ff4b4b;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-link {
+    color: #fff;
+    font-size: 18px;
+}
+
+.social-link:hover {
+    color: #ff6b6b;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    color: #ff6b6b;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+
+   /*end of code to the footer*/
+
+    </style>
+</head>
+<body>
+    <div class="header"id="fixedDiv">
+        <div class="logo">
+            <span class="text">Clean</span>
+            <span class="highlight">It</span>
+            <div class="sparkle"></div>
+        </div>
+        <div class="nav" >
+            <a href="#" id="fixed1">Home</a>
+            <a href="#" id="fixed2">About Us</a>
+            <div class="dropdown">
+                <a href="services.html#serviceCard" id="fixed3" class="dropbtn">Our Services</a>
+                <div class="dropdown-content">
+                    <a href="services.html"id="link"onclick="showHorizontalCard()"  id="fixed">Residential Cleaning</a>
+                    <a href="#" onclick="showHorizontalCard()" id="fixed">Commercial Cleaning</a>
+                    <a href="#" onclick="showHorizontalCard()" id="fixed">Specialized Cleaning</a>
+                </div>
+            </div>
+            <a href="#" id="fixed4">FAQs</a>
+            <a href="#" id="fixed5">Contact Us</a>
+            <a href="#" id="fixed6">Book Now</a>
+        </div>
+        <div class="auth">
+            <div class="profile-icon">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Your Trusted Partner for a Spotless Home</h1>
+            <p>Professional cleaning services at your doorstep. Book now and enjoy a cleaner, healthier home.</p>
+            <a href="#" class="ctat-button">Book Now</a>
+            <a href="#" class="ctat-button">Learn More</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="text-center mt-5">Our Services</h2>
+        <div class="row mt-4" id="serviceCards">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="pexels-bidvine-517980-1249610.jpg" class="card-img-top" alt="Residential Cleaning">
+                    <div class="card-body">
+                        <h5 class="card-title">Residential Cleaning</h5>
+                        <p class="card-text">Professional cleaning for your home</p>
+                        <!-- Add onclick event to show the horizontal card -->
+                        <a href="#" class="btn btn-primary" onclick="showHorizontalCard()">See More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="pexels-andrea-piacquadio-840996.jpg" class="card-img-top" alt="Commercial Cleaning">
+                    <div class="card-body">
+                        <h5 class="card-title">Commercial Cleaning</h5>
+                        <p class="card-text">Specialized cleaning for commercial spaces</p>
+                        <!-- Add onclick event to show the horizontal card -->
+                        <a href="#" class="btn btn-primary" onclick="showHorizontalCard()">See More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="pexels-life-of-pix-8092.jpg" class="card-img-top" alt="Specialized Cleaning">
+                    <div class="card-body">
+                        <h5 class="card-title">Specialized Cleaning</h5>
+                        <p class="card-text">Customized cleaning services tailored to your needs</p>
+                        <!-- Add onclick event to show the horizontal card -->
+                        <a href="#" class="btn btn-primary" onclick="showHorizontalCard()">See More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+       
+
+    <div class="how-it-works">
+        <div class="split-section">
+            <div class="text-container">
+                <h2>Our Services</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex temporibus harum cum odit voluptatum assumenda ad accusantium,
+                     nesciunt labore obcaecati ratione velit soluta in dolorem dolores nulla possimus ullam architecto. Cras venenatis euismod malesuada.</p>
+                <button class="cta-button">Learn More</button>
+            </div>
+            <div class="image-container">
+               
+            </div>
+        </div>
+        <!-- Add step-by-step graphics and descriptions here -->
+    </div>
+
+    <div class="testimonials">
+        <section class="content-section">
+            <div class="text-content">
+                <h1>Special Offers</h1>
+                <p>This is the text section, which now has a dark blue background color.
+                    his is the text section, which now has a dark blue background color
+                    his is the text section, which now has a dark blue background color. This is the text section,
+                     which now has a dark blue background color.
+                    his is the text section, which now has a dark blue background color
+                    his is the text section, which now has a dark blue background color</p>
+                <a href="#" class="ctat-button">Book Now</a>
+
+            </div>
+            <div class="image-content">
+                <img src="pexels-bidvine-517980-1249610.jpg" alt="Placeholder Image">
+            </div>
+        </section>
+        <!-- Add customer testimonials here -->
+    </div>
+
+    <div class="why-choose-us">
+        <section id="why-choose-us" class="why-choose-us">
+            <div class="container">
+                <h2 class="section-title">Why Choose Us</h2>
+                <p class="section-subtitle">Discover the top reasons to choose our house help hiring services.</p>
+        
+                <div class="benefits">
+                    <div class="benefit">
+                        <i class="fas fa-check-circle benefit-icon"></i>
+                        <h3 class="benefit-title">Trusted Professionals</h3>
+                        <p class="benefit-description">Our house helps are thoroughly vetted and highly trained to ensure top-quality service.</p>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-shield-alt benefit-icon"></i>
+                        <h3 class="benefit-title">Safety First</h3>
+                        <p class="benefit-description">We prioritize your safety with background checks and regular evaluations of our house helps.</p>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-thumbs-up benefit-icon"></i>
+                        <h3 class="benefit-title">Customer Satisfaction</h3>
+                        <p class="benefit-description">Our clients are consistently happy with our services, leading to high levels of customer satisfaction.</p>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-clock benefit-icon"></i>
+                        <h3 class="benefit-title">Flexible Scheduling</h3>
+                        <p class="benefit-description">Choose from a variety of scheduling options to fit your needs and lifestyle.</p>
+                    </div>
+                </div>
+        
+                <div class="testimonials">
+                    <h3 class="testimonial-title">What Our Clients Say</h3>
+                    <div class="testimonial">
+                        <p>"The best house help service I've ever used. Reliable and professional!"</p>
+                        <span>- Sarah M.</span>
+                    </div>
+                    <div class="testimonial">
+                        <p>"I couldn't be happier with the quality of service and the friendly staff."</p>
+                        <span>- John D.</span>
+                    </div>
+                </div>
+        
+                <div class="achievements">
+                    <div class="achievement">
+                        <h3>10,000+</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                    <div class="achievement">
+                        <h3>500+</h3>
+                        <p>Trusted House Helps</p>
+                    </div>
+                    <div class="achievement">
+                        <h3>5 Years</h3>
+                        <p>Industry Experience</p>
+                    </div>
+                </div>
+        
+                <div class="cta">
+                    <a href="/contact" class="cta-btn">Get Started</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Add selling points here -->
+    </div>
+
+    <div class="special-offers">
+        <section id="contact-us" class="contact-us">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">We are here to assist you. Reach out to us via any of the methods below.</p>
+                
+                <div class="contact-details">
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Main St, Cityville, Country</p>
+                        <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+                        <p><i class="fas fa-envelope"></i> contact@househelphiring.com</p>
+                        <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM</p>
+                    </div>
+        
+                    <!-- Contact Form -->
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="phone" placeholder="Your Phone" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Submit</button>
+                        </form>
+                    </div>
+        
+                    <!-- Google Map -->
+                    <div class="contact-map">
+                        <h3>Find Us Here</h3>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.837227019162!2d144.964302215525!3d-37.8079999797511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad643abf212b7a7%3A0x2062a9b665b8c0!2s123+Main+St%2C+Cityville!5e0!3m2!1sen!2sus!4v1624635965891!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Add promotional banners here -->
+    </div>
+
+    <div class="contact">
+        <h2>Stay in Touch</h2>
+        <!-- Add contact form and information here -->
+    </div>
+
+
+    
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section company-info">
+                    <img src="logo.png" alt="Company Logo" class="footer-logo">
+                    <p class="footer-description">Your trusted partner in finding the best house help professionals.</p>
+                </div>
+    
+                <!-- Quick Links -->
+                <div class="footer-section quick-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Contact Info -->
+                <div class="footer-setion conact-info">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Main St, Cityville, Country</p>
+                    <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@househelphiring.com</p>
+                </div>
+    
+                <!-- Newsletter Signup -->
+                <div class="footer-section newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter to get the latest updates.</p>
+                    <form action="#" method="post" class="newsletter-form">
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+    
+                <!-- Social Media Links -->
+                <div class="footer-section social-media">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://instagram.com" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bottom">
+                <p>&copy; 2024 House Help Hiring. All rights reserved. | <a href="/terms">Terms of Service</a> | <a href="/privacy">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    
+    <script src="Script.js">
+        
+// Select the fixed div
+var fixedDiv = document.getElementsByClassName('header');
+
+// Define the scroll threshold where you want to change the background color
+var scrollThreshold = 300; // Adjust this value as needed
+
+// Event listener for scroll
+window.addEventListener('scroll', function() {
+    // Get current scroll position
+    var scrollPosition = window.scrollY || window.pageYOffset;
+
+    // Check if scroll position is beyond the threshold
+    if (scrollPosition > scrollThreshold) {
+        fixedDiv.style.backgroundColor = '#f0f0f0'; // Change background color
+    } else {
+        fixedDiv.style.backgroundColor = 'transparent'; // Revert to initial background color
+    }
+});
+
+      
+    </script>
+</html>
